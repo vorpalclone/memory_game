@@ -1,7 +1,9 @@
 package ismayil.eliyev.yaddasoyunu
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Nickname
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,24 +13,36 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var rvBoard: RecyclerView
-    private lateinit var tvHemleler: TextView
-    private lateinit var tvXallar: TextView
     private lateinit var tvNickname: TextView
+    private lateinit var btn8x8: Button
+    private lateinit var btn16x16: Button
+    private lateinit var btn32x32: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        rvBoard = findViewById(R.id.rvBoard)
-        tvHemleler = findViewById(R.id.tvHemleler)
-        tvXallar = findViewById(R.id.tvXallar)
         tvNickname = findViewById(R.id.tvNickname)
+        btn8x8 = findViewById(R.id.btn8x8)
+        btn16x16 = findViewById(R.id.btn16x16)
+        btn32x32 = findViewById(R.id.btn32x32)
 
         val nickname = intent.getStringExtra("nickname")
         if (nickname != null){
             tvNickname.text = "Xoş gəldin, $nickname"
+        }
+
+        btn8x8.setOnClickListener{
+            val intent = Intent(this, Page_8x8::class.java)
+            startActivity(intent)
+        }
+
+        btn16x16.setOnClickListener{
+
+        }
+        btn32x32.setOnClickListener{
+
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

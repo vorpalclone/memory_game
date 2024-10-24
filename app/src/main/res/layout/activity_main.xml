@@ -9,66 +9,60 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvNickname"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:id="@+id/tvNickname"
         android:text="Xoş Gəldin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <LinearLayout
         android:id="@+id/llOyun"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/color1"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvNickname"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.cardview.widget.CardView
+        <Button
+            android:id="@+id/btn8x8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp">
+            android:layout_height="wrap_content"
+            android:text="8x8"
+            android:backgroundTint="@color/color2"
+            android:textSize="32dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:id="@+id/tvHemleler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="Həmlələr: 0"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <Button
+            android:id="@+id/btn16x16"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp">
+            android:layout_height="wrap_content"
+            android:text="16x16"
+            android:textSize="32dp"
+            android:backgroundTint="@color/color2"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:id="@+id/tvXallar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="Xallar: 0/4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btn32x32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="32x32"
+            android:textSize="32dp"
+            android:backgroundTint="@color/color2"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBoard"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/llOyun"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

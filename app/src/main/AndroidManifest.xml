@@ -13,6 +13,9 @@
         android:theme="@style/Theme.YaddasOyunu"
         tools:targetApi="31">
         <activity
+            android:name=".Page_32x32"
+            android:exported="false" />
+        <activity
             android:name=".Page_16x16"
             android:exported="false" />
         <activity
@@ -27,7 +30,14 @@
         </activity>
         <activity
             android:name=".Page_8x8"
-            android:exported="false" />
+            android:exported="true"
+            android:label="Page8x8">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".LoginPage"
             android:exported="false" />
